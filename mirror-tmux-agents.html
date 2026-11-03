@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mirror tmux agents</title>
+<link rel="alternate" type="text/markdown" href="https://pyrolistical.github.io/token-effort/mirror-tmux-agents.md">
+<link rel="alternate" type="application/rss+xml" href="https://pyrolistical.github.io/token-effort/feed.xml">
+<link rel="stylesheet" href="https://pyrolistical.github.io/token-effort/style.ff867d752f0be8a8.css">
+</head>
+<body><pre>
+<span class="heading-1" role="heading" aria-level="1"><span class="mark"># </span>Mirror tmux agents</span>
+
+<a href="https://pyrolistical.github.io/token-effort/"><span class="mark">[</span>Token Effort<span class="mark">](https://pyrolistical.github.io/token-effort/)</span></a> · <a href="https://pyrolistical.github.io/token-effort/mirror-tmux-agents.md"><span class="mark">[</span>Markdown<span class="mark">](https://pyrolistical.github.io/token-effort/mirror-tmux-agents.md)</span></a>
+
+<a href="https://pyrolistical.github.io/token-effort/mirror-tmux-agents.65fac3952a753aaf.png"><span class="mark">![Agent list beside an open agent, with fake data](https://pyrolistical.github.io/token-effort/mirror-tmux-agents.65fac3952a753aaf.png)</span><img src="https://pyrolistical.github.io/token-effort/mirror-tmux-agents.65fac3952a753aaf.png" alt=""></a>
+
+Control all your agents across providers from one interface on the go
+
+<span class="item" style="--hang:2ch"><span class="mark">- </span>List every coding agent running in tmux</span>
+<span class="item" style="--hang:2ch"><span class="mark">- </span>Mirror agents' screens live</span>
+<span class="item" style="--hang:2ch"><span class="mark">- </span>Send agents messages</span>
+<span class="item" style="--hang:2ch"><span class="mark">- </span>Typing and scrolling feel local, with the agent catching up behind them</span>
+
+<span class="heading-2" role="heading" aria-level="2"><span class="mark">## </span>Implementation</span>
+
+<span class="item" style="--hang:2ch"><span class="mark">- </span><span class="code"><span class="mark">`</span>tmux list-panes<span class="mark">`</span></span></span>
+<span class="item" style="--hang:2ch"><span class="mark">- </span><span class="code"><span class="mark">`</span>tmux capture-pane<span class="mark">`</span></span></span>
+<span class="item" style="--hang:2ch"><span class="mark">- </span><span class="code"><span class="mark">`</span>tmux send-keys<span class="mark">`</span></span></span>
+<span class="item" style="--hang:2ch"><span class="mark">- </span>WebSocket</span>
+<span class="item" style="--hang:2ch"><span class="mark">- </span>PWA</span>
+<span class="item" style="--hang:2ch"><span class="mark">- </span>Hot reloading</span>
+<span class="item" style="--hang:2ch"><span class="mark">- </span>Latency compensation</span>
+<span class="item" style="--hang:4ch"><span class="mark">  - </span>Predictive local echo</span>
+<span class="item" style="--hang:4ch"><span class="mark">  - </span>Compositor-style scrolling</span>
+
+<span class="heading-2" role="heading" aria-level="2"><span class="mark">## </span>Polish</span>
+
+<span class="item" style="--hang:2ch"><span class="mark">- </span>Home</span>
+<span class="item" style="--hang:4ch"><span class="mark">  - </span>Provider usage</span>
+<span class="item" style="--hang:4ch"><span class="mark">  - </span>Usage reset countdown</span>
+<span class="item" style="--hang:4ch"><span class="mark">  - </span>New agent button</span>
+<span class="item" style="--hang:4ch"><span class="mark">  - </span>Working spinner</span>
+<span class="item" style="--hang:4ch"><span class="mark">  - </span>Unseen highlight</span>
+<span class="item" style="--hang:4ch"><span class="mark">  - </span>Empty session label</span>
+<span class="item" style="--hang:4ch"><span class="mark">  - </span>Queued message countdown</span>
+<span class="item" style="--hang:4ch"><span class="mark">  - </span>Swipe to close</span>
+<span class="item" style="--hang:4ch"><span class="mark">  - </span>Swipe to clear</span>
+<span class="item" style="--hang:2ch"><span class="mark">- </span>Navigation</span>
+<span class="item" style="--hang:4ch"><span class="mark">  - </span>Slide transitions</span>
+<span class="item" style="--hang:4ch"><span class="mark">  - </span>Swipe back</span>
+<span class="item" style="--hang:4ch"><span class="mark">  - </span>Unseen count</span>
+<span class="item" style="--hang:4ch"><span class="mark">  - </span>Reopen last agent</span>
+<span class="item" style="--hang:2ch"><span class="mark">- </span>Screen</span>
+<span class="item" style="--hang:4ch"><span class="mark">  - </span>Fit pane to viewport</span>
+<span class="item" style="--hang:4ch"><span class="mark">  - </span>Spinner until a new pane has text</span>
+<span class="item" style="--hang:4ch"><span class="mark">  - </span>Restore pane size</span>
+<span class="item" style="--hang:4ch"><span class="mark">  - </span>Follow keyboard height</span>
+<span class="item" style="--hang:4ch"><span class="mark">  - </span>Flicker-free redraws</span>
+<span class="item" style="--hang:2ch"><span class="mark">- </span>Touch</span>
+<span class="item" style="--hang:4ch"><span class="mark">  - </span>Tap as mouse click</span>
+<span class="item" style="--hang:4ch"><span class="mark">  - </span>Tap toggles keyboard</span>
+<span class="item" style="--hang:4ch"><span class="mark">  - </span>Drag to move cursor</span>
+<span class="item" style="--hang:4ch"><span class="mark">  - </span>Long press to copy</span>
+<span class="item" style="--hang:2ch"><span class="mark">- </span>Typing</span>
+<span class="item" style="--hang:4ch"><span class="mark">  - </span>Native text field overlay</span>
+<span class="item" style="--hang:4ch"><span class="mark">  - </span>Esc, tab, @ and newline keys</span>
+<span class="item" style="--hang:4ch"><span class="mark">  - </span>Image upload and paste</span>
+<span class="item" style="--hang:2ch"><span class="mark">- </span>Scrolling</span>
+<span class="item" style="--hang:4ch"><span class="mark">  - </span>Client-side scrollback</span>
+<span class="item" style="--hang:4ch"><span class="mark">  - </span>Cached image tiles instead of raw text</span>
+<span class="item" style="--hang:4ch"><span class="mark">  - </span>Momentum scrolling</span>
+<span class="item" style="--hang:4ch"><span class="mark">  - </span>Rubber band overscroll</span>
+<span class="item" style="--hang:4ch"><span class="mark">  - </span>Pinned prompt</span>
+<span class="item" style="--hang:2ch"><span class="mark">- </span>Connection</span>
+<span class="item" style="--hang:4ch"><span class="mark">  - </span>Offline cache</span>
+<span class="item" style="--hang:4ch"><span class="mark">  - </span>Offline indicator</span>
+<span class="item" style="--hang:4ch"><span class="mark">  - </span>Input queue across reconnects</span>
+<span class="item" style="--hang:4ch"><span class="mark">  - </span>Client error reporting</span>
+
+<span class="heading-2" role="heading" aria-level="2"><span class="mark">## </span>Related</span>
+
+<span class="item" style="--hang:2ch"><span class="mark">- </span><a href="https://pyrolistical.github.io/token-effort/agent-drafts-queue.html"><span class="mark">[</span>Agent drafts queue<span class="mark">](https://pyrolistical.github.io/token-effort/agent-drafts-queue.html)</span></a></span>
+
+Last modified 2026-11-02
+
+</pre></body></html>

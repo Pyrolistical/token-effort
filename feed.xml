@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+<title>Token Effort</title>
+<link>https://pyrolistical.github.io/token-effort/</link>
+<description>Spec no mistakes</description>
+<atom:link href="https://pyrolistical.github.io/token-effort/feed.xml" rel="self" type="application/rss+xml"/>
+<lastBuildDate>Tue, 03 Nov 2026 23:35:57 GMT</lastBuildDate>
+<item>
+<title>Literal markdown blog</title>
+<link>https://pyrolistical.github.io/token-effort/literal-markdown-blog.html</link>
+<guid isPermaLink="true">https://pyrolistical.github.io/token-effort/literal-markdown-blog.html</guid>
+<pubDate>Tue, 03 Nov 2026 23:35:57 GMT</pubDate>
+<description>Publish a blog whose pages are markdown an agent can build from</description>
+</item>
+<item>
+<title>Blind agent review</title>
+<link>https://pyrolistical.github.io/token-effort/blind-agent-review.html</link>
+<guid isPermaLink="true">https://pyrolistical.github.io/token-effort/blind-agent-review.html</guid>
+<pubDate>Tue, 03 Nov 2026 23:32:35 GMT</pubDate>
+<description>Get independent reviews of a commit from several agents</description>
+</item>
+<item>
+<title>Agent drafts queue</title>
+<link>https://pyrolistical.github.io/token-effort/agent-drafts-queue.html</link>
+<guid isPermaLink="true">https://pyrolistical.github.io/token-effort/agent-drafts-queue.html</guid>
+<pubDate>Mon, 02 Nov 2026 15:00:42 GMT</pubDate>
+<description>Keep your agents working through a queue while you are away</description>
+</item>
+<item>
+<title>Mirror tmux agents</title>
+<link>https://pyrolistical.github.io/token-effort/mirror-tmux-agents.html</link>
+<guid isPermaLink="true">https://pyrolistical.github.io/token-effort/mirror-tmux-agents.html</guid>
+<pubDate>Mon, 02 Nov 2026 15:00:42 GMT</pubDate>
+<description>Control all your agents across providers from one interface on the go</description>
+</item>
+</channel>
+</rss>

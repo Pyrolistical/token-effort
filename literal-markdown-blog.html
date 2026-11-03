@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Literal markdown blog</title>
+<link rel="alternate" type="text/markdown" href="https://pyrolistical.github.io/token-effort/literal-markdown-blog.md">
+<link rel="alternate" type="application/rss+xml" href="https://pyrolistical.github.io/token-effort/feed.xml">
+<link rel="stylesheet" href="https://pyrolistical.github.io/token-effort/style.ff867d752f0be8a8.css">
+</head>
+<body><pre>
+<span class="heading-1" role="heading" aria-level="1"><span class="mark"># </span>Literal markdown blog</span>
+
+<a href="https://pyrolistical.github.io/token-effort/"><span class="mark">[</span>Token Effort<span class="mark">](https://pyrolistical.github.io/token-effort/)</span></a> · <a href="https://pyrolistical.github.io/token-effort/literal-markdown-blog.md"><span class="mark">[</span>Markdown<span class="mark">](https://pyrolistical.github.io/token-effort/literal-markdown-blog.md)</span></a>
+
+Publish a blog whose pages are markdown an agent can build from
+
+<span class="item" style="--hang:2ch"><span class="mark">- </span>Every post is a spec an agent can build from</span>
+<span class="item" style="--hang:2ch"><span class="mark">- </span>Pages read as styled text while showing their raw markdown</span>
+<span class="item" style="--hang:2ch"><span class="mark">- </span>Copying or fetching a page gives its exact markdown</span>
+
+<span class="heading-2" role="heading" aria-level="2"><span class="mark">## </span>Implementation</span>
+
+<span class="item" style="--hang:2ch"><span class="mark">- </span>Line-by-line markdown renderer</span>
+<span class="item" style="--hang:2ch"><span class="mark">- </span><span class="code"><span class="mark">`</span>&lt;pre&gt;<span class="mark">`</span></span> with <span class="code"><span class="mark">`</span>white-space: pre-wrap<span class="mark">`</span></span></span>
+<span class="item" style="--hang:2ch"><span class="mark">- </span><span class="code"><span class="mark">`</span>font-size: 0<span class="mark">`</span></span> on link syntax</span>
+<span class="item" style="--hang:2ch"><span class="mark">- </span><span class="code"><span class="mark">`</span>&lt;link rel="alternate" type="text/markdown"&gt;<span class="mark">`</span></span></span>
+<span class="item" style="--hang:2ch"><span class="mark">- </span>Orphan <span class="code"><span class="mark">`</span>gh-pages<span class="mark">`</span></span> branch</span>
+<span class="item" style="--hang:2ch"><span class="mark">- </span>GitHub Pages</span>
+
+<span class="heading-2" role="heading" aria-level="2"><span class="mark">## </span>Polish</span>
+
+<span class="item" style="--hang:2ch"><span class="mark">- </span>Page</span>
+<span class="item" style="--hang:4ch"><span class="mark">  - </span>Dim syntax so text reads first</span>
+<span class="item" style="--hang:4ch"><span class="mark">  - </span>Hide only link and image syntax</span>
+<span class="item" style="--hang:4ch"><span class="mark">  - </span>Solarized following the system setting</span>
+<span class="item" style="--hang:4ch"><span class="mark">  - </span>Hang wrapped list items under their text</span>
+<span class="item" style="--hang:4ch"><span class="mark">  - </span>Lone image shown in place</span>
+<span class="item" style="--hang:4ch"><span class="mark">  - </span>Inline image as a normal link</span>
+<span class="item" style="--hang:4ch"><span class="mark">  - </span>Keep backgrounds on wrapped code</span>
+<span class="item" style="--hang:4ch"><span class="mark">  - </span>Stop mobile browsers resizing text</span>
+<span class="item" style="--hang:2ch"><span class="mark">- </span>Post</span>
+<span class="item" style="--hang:4ch"><span class="mark">  - </span>Title, optional screenshot, purpose, specs, then optional implementation, polish and related posts</span>
+<span class="item" style="--hang:4ch"><span class="mark">  - </span>Screenshot with fake data</span>
+<span class="item" style="--hang:4ch"><span class="mark">  - </span>Homepage and markdown links under the title</span>
+<span class="item" style="--hang:4ch"><span class="mark">  - </span>Last modified from git</span>
+<span class="item" style="--hang:2ch"><span class="mark">- </span>Build</span>
+<span class="item" style="--hang:4ch"><span class="mark">  - </span>Pages, homepage and feed from committed sources</span>
+<span class="item" style="--hang:4ch"><span class="mark">  - </span>Fail on uncommitted changes</span>
+<span class="item" style="--hang:4ch"><span class="mark">  - </span>Fail on a relative link</span>
+<span class="item" style="--hang:4ch"><span class="mark">  - </span>Fail on a missing screenshot</span>
+<span class="item" style="--hang:4ch"><span class="mark">  - </span>Fail on an unclosed code fence</span>
+<span class="item" style="--hang:4ch"><span class="mark">  - </span>Fail on an unknown related post</span>
+<span class="item" style="--hang:2ch"><span class="mark">- </span>Distribution</span>
+<span class="item" style="--hang:4ch"><span class="mark">  - </span>Homepage grouped by category</span>
+<span class="item" style="--hang:4ch"><span class="mark">  - </span>RSS feed</span>
+<span class="item" style="--hang:4ch"><span class="mark">  - </span>Assets named by content hash</span>
+<span class="item" style="--hang:4ch"><span class="mark">  - </span>Absolute URLs everywhere</span>
+
+Last modified 2026-11-03
+
+</pre></body></html>

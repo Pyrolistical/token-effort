@@ -1,0 +1,111 @@
+:root {
+  color-scheme: light dark;
+  --paper: light-dark(#fdf6e3, #002b36);
+  --wash: light-dark(#eee8d5, #073642);
+  --ink: light-dark(#657b83, #839496);
+  --strong: light-dark(#586e75, #93a1a1);
+  --dim: light-dark(#93a1a1, #586e75);
+  --link: #268bd2;
+  --quote: #2aa198;
+}
+
+body {
+  container-type: inline-size;
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+}
+
+pre {
+  box-sizing: border-box;
+  max-width: 84ch;
+  margin: 0 auto;
+  padding: 4rem 1.5rem;
+  font:
+    1rem/1.6 ui-monospace,
+    "SF Mono",
+    Menlo,
+    Consolas,
+    monospace;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+.mark {
+  color: var(--dim);
+  font-weight: 400;
+  font-style: normal;
+  text-decoration: none;
+}
+
+.heading-1,
+.heading-2,
+.heading-3,
+.heading-4,
+.heading-5,
+.heading-6,
+.bold {
+  color: var(--strong);
+  font-weight: 700;
+}
+
+.heading-1 {
+  font-size: 2.25em;
+  line-height: 1.25;
+}
+
+.heading-2 {
+  font-size: 1.6em;
+  line-height: 1.3;
+}
+
+.heading-3 {
+  font-size: 1.25em;
+}
+
+.item {
+  box-sizing: border-box;
+  display: inline-block;
+  max-width: 100%;
+  padding-left: var(--hang);
+  text-indent: calc(-1 * var(--hang));
+  vertical-align: top;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.quote {
+  color: var(--quote);
+  font-style: italic;
+}
+
+.code {
+  background: var(--wash);
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+a .mark {
+  font-size: 0;
+}
+
+img {
+  max-width: 100%;
+  vertical-align: top;
+}
+
+img.landscape {
+  width: 100cqw;
+  max-width: none;
+  margin-left: calc(50% - 50cqw);
+}
+
+a {
+  color: var(--link);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}

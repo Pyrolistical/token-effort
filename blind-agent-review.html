@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Blind agent review</title>
+<link rel="alternate" type="text/markdown" href="https://pyrolistical.github.io/token-effort/blind-agent-review.md">
+<link rel="alternate" type="application/rss+xml" href="https://pyrolistical.github.io/token-effort/feed.xml">
+<link rel="stylesheet" href="https://pyrolistical.github.io/token-effort/style.ff867d752f0be8a8.css">
+</head>
+<body><pre>
+<span class="heading-1" role="heading" aria-level="1"><span class="mark"># </span>Blind agent review</span>
+
+<a href="https://pyrolistical.github.io/token-effort/"><span class="mark">[</span>Token Effort<span class="mark">](https://pyrolistical.github.io/token-effort/)</span></a> · <a href="https://pyrolistical.github.io/token-effort/blind-agent-review.md"><span class="mark">[</span>Markdown<span class="mark">](https://pyrolistical.github.io/token-effort/blind-agent-review.md)</span></a>
+
+Get independent reviews of a commit from several agents
+
+<span class="item" style="--hang:2ch"><span class="mark">- </span>Several agents review the same commit unattended</span>
+<span class="item" style="--hang:2ch"><span class="mark">- </span>Each review is independent</span>
+<span class="item" style="--hang:2ch"><span class="mark">- </span>All reviews are compared together</span>
+
+<span class="heading-2" role="heading" aria-level="2"><span class="mark">## </span>Implementation</span>
+
+<span class="item" style="--hang:2ch"><span class="mark">- </span><span class="code"><span class="mark">`</span>git worktree add --detach<span class="mark">`</span></span> per reviewer</span>
+<span class="item" style="--hang:2ch"><span class="mark">- </span>Temporary <span class="code"><span class="mark">`</span>HOME<span class="mark">`</span></span> per reviewer</span>
+<span class="item" style="--hang:4ch"><span class="mark">  - </span>Claude: <span class="code"><span class="mark">`</span>claude -p<span class="mark">`</span></span> with a <span class="code"><span class="mark">`</span>claude setup-token<span class="mark">`</span></span> token</span>
+<span class="item" style="--hang:4ch"><span class="mark">  - </span>Codex: <span class="code"><span class="mark">`</span>codex exec<span class="mark">`</span></span> with the login linked in</span>
+<span class="item" style="--hang:2ch"><span class="mark">- </span>Atomic <span class="code"><span class="mark">`</span>rename<span class="mark">`</span></span> into an inbox directory</span>
+<span class="item" style="--hang:2ch"><span class="mark">- </span>systemd path unit with <span class="code"><span class="mark">`</span>DirectoryNotEmpty=<span class="mark">`</span></span> starting a root service</span>
+<span class="item" style="--hang:2ch"><span class="mark">- </span>Reviews kept under <span class="code"><span class="mark">`</span>/root<span class="mark">`</span></span></span>
+<span class="item" style="--hang:2ch"><span class="mark">- </span><span class="code"><span class="mark">`</span>runuser<span class="mark">`</span></span> to hand them back</span>
+<span class="item" style="--hang:2ch"><span class="mark">- </span>BEL character</span>
+
+<span class="heading-2" role="heading" aria-level="2"><span class="mark">## </span>Polish</span>
+
+<span class="item" style="--hang:2ch"><span class="mark">- </span>Isolation</span>
+<span class="item" style="--hang:4ch"><span class="mark">  - </span>Copy global instructions, settings and hooks into each home</span>
+<span class="item" style="--hang:4ch"><span class="mark">  - </span>Remote Control off</span>
+<span class="item" style="--hang:4ch"><span class="mark">  - </span>Temporary files inside the home</span>
+<span class="item" style="--hang:4ch"><span class="mark">  - </span>Delete checkout and home after each reviewer and on interrupt</span>
+<span class="item" style="--hang:4ch"><span class="mark">  - </span>No output on the terminal</span>
+<span class="item" style="--hang:2ch"><span class="mark">- </span>Collection</span>
+<span class="item" style="--hang:4ch"><span class="mark">  - </span>Accept only single-link regular files with expected names, within size and time limits</span>
+<span class="item" style="--hang:4ch"><span class="mark">  - </span>Keep a reviewer's second file under a timestamp</span>
+<span class="item" style="--hang:4ch"><span class="mark">  - </span>Install root's copies by hand, not from the checkout</span>
+<span class="item" style="--hang:4ch"><span class="mark">  - </span>Start the next reviewer after collection</span>
+<span class="item" style="--hang:2ch"><span class="mark">- </span>Rounds</span>
+<span class="item" style="--hang:4ch"><span class="mark">  - </span>Name by local start time</span>
+<span class="item" style="--hang:4ch"><span class="mark">  - </span>Record instructions, commit and each reviewer's outcome outside scratch</span>
+<span class="item" style="--hang:4ch"><span class="mark">  - </span>Read the token at a child shell prompt</span>
+<span class="item" style="--hang:4ch"><span class="mark">  - </span>Bell when the last reviewer ends</span>
+<span class="item" style="--hang:4ch"><span class="mark">  - </span>Continue past a reviewer that fails or writes nothing</span>
+<span class="item" style="--hang:4ch"><span class="mark">  - </span>Refuse to start over leftovers, an unread inbox, a stopped collector or a missing login</span>
+
+<span class="heading-2" role="heading" aria-level="2"><span class="mark">## </span>Related</span>
+
+<span class="item" style="--hang:2ch"><span class="mark">- </span><a href="https://pyrolistical.github.io/token-effort/agent-drafts-queue.html"><span class="mark">[</span>Agent drafts queue<span class="mark">](https://pyrolistical.github.io/token-effort/agent-drafts-queue.html)</span></a></span>
+<span class="item" style="--hang:2ch"><span class="mark">- </span><a href="https://pyrolistical.github.io/token-effort/mirror-tmux-agents.html"><span class="mark">[</span>Mirror tmux agents<span class="mark">](https://pyrolistical.github.io/token-effort/mirror-tmux-agents.html)</span></a></span>
+
+Last modified 2026-11-03
+
+</pre></body></html>
